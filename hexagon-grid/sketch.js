@@ -7,9 +7,9 @@ let b;
 function setup() {
   // put setup code here
   createCanvas(500, 500)
-  for(let i = 0; i < 5; i++){
+  for(let i = 0; i < 9; i++){
     grid[i] = []
-    for(let j = 0; j < 5; j++){
+    for(let j = 0; j < 9; j++){
       grid[i][j] = new hexagon(i, j)
 
     }
@@ -25,11 +25,14 @@ function setup() {
 function draw() {
   // put drawing code here
   background(51)
-  for(let i = 0; i < 5; i++){
-    for(let j = 0; j < 5; j++){
+  for(let i = 0; i < 9; i++){
+    for(let j = 0; j < 9; j++){
       grid[i][j].draw()
+      grid[i][j].fade -= 1
+
       // grid[3][6].setColor('rgba(0, 255, 0, .5)')
     }
   }
-
+  
 }
+
